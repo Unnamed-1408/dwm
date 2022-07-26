@@ -84,6 +84,7 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *raisevolume[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 static const char *lowervolume[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
+static const char *flameshot[] = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -92,6 +93,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,      togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = lowervolume } },
 	{ MODKEY|ShiftMask,             XK_m,	   spawn,          {.v = raisevolume } },
+    { 0,                            XK_Print,  spawn,          {.v = flameshot } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
