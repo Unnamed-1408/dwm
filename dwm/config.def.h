@@ -82,8 +82,8 @@ static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
-static const char *raisevolume[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
-static const char *lowervolume[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
+static const char *raisevolume[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *lowervolume[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
